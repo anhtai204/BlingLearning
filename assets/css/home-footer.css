@@ -1,0 +1,25 @@
+
+.home-footer {
+    padding-top: 50px;
+    background-color: rgba(229, 229, 229, 0.9);
+    height: 160px;
+    width: 100%;
+}
+.home-footer .image {
+    display: inline-block;
+    margin-left: 500px;
+    margin-right: 20px;
+}
+.home-footer img {
+    height: 80px;
+}
+.home-footer .info {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+}
+.home-footer .tag {
+    margin-top: 20px;
+    margin-left: 510px;
+}

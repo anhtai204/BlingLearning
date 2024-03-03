@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlingLearning</title>
+    <link rel="stylesheet" href="../assets/css/DangNhap.css">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
+
+</head>
+<body>
+    <img id="img1" src="../assets/img/icon/html1.png" alt="">
+    <img id="img2" src="../assets/img/icon/html2.png" alt="">
+    <img id="img3" src="../assets/img/icon/html3.png" alt="">
+    <img id="img4" src="../assets/img/icon/css1.png" alt="">
+    <img id="img5" src="../assets/img/icon/javascript1.png" alt="">
+    <img id="img6" src="../assets/img/icon/react1.png" alt="">
+    <img id="img7" src="../assets/img/icon/visual-studio-code.png" alt="">
+    <img id="img8" src="../assets/img/icon/php.png" alt="">
+
+    <div class="container">
+        <div class="sign-in">
+            <form action="">
+                <h1>Sign In</h1>
+                <div class="icons-theme">
+                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-instagram"></i></a>
+                    <a href="#"><i class="ti-twitter"></i></a>
+                    <a href="#"><i class="ti-skype"></i></a>
+                </div>
+                <span>or use your account</span><br>
+                <div style="height: 12px;"></div>
+                <input type="text" id="account-sign-in" placeholder="Account"><br>
+                <input type="password" id="pass-sign-in" placeholder="Password"><br>
+                <div style="height: 8px;"></div>
+                <a style="color: hsl(0, 1%, 34%); font-size: 13px;" href="#">Forget Your Password</a><br>
+                <button type="button" id="btn-sign-in">Sign In</button>
+            </form>
+        </div>
+
+        <div class="sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="icons-theme">
+                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-instagram"></i></a>
+                    <a href="#"><i class="ti-twitter"></i></a>
+                    <a href="#"><i class="ti-skype"></i></a>
+                </div>
+                <span>or use your email for registeration</span><br>
+                <div style="height: 12px;"></div>
+                <input type="text" id="account-sign-up" placeholder="Account"><br>
+                <input type="email" required id="email-sign-up" placeholder="Email"><br>
+                <input type="password" id="pass-sign-up" placeholder="Password"><br>
+                <button type="button" id="btn-sign-up">Sign up</button>
+            </form>
+        </div> 
+
+        <div class="animate-sector">
+            <div class="toggle">
+                <div class="toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of</p> 
+                    <p>site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+
+                <div class="toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register your personal details to use all of </p>
+                    <p>site features</p>
+                    <button class="hidden" id="register">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // nút đăng nhập ở phần đăng nhập
+        var btn_sign_in = document.querySelector("#btn-sign-in")
+
+        // nút đăng kí ở phần đăng kí
+        var btn_sign_up = document.querySelector("#btn-sign-up")
+
+        // nút màu tím Sign in
+        var toggle_sign_in = document.getElementById("login") 
+
+        // nút màu tím Sign up
+        var toggle_sign_up = document.getElementById("register")
+
+        // thẻ màu tím bên trái
+        var toggle_left = document.querySelector(".toggle-left")
+
+        // thẻ màu tím bên phải
+        var toggle_right = document.querySelector(".toggle-right")
+
+        // chứa toàn bộ phần dăng kí
+        var sign_up_sector = document.querySelector(".sign-up")
+
+        // chứa toàn bộ phần dăng nhập
+        var sign_in_sector = document.querySelector(".sign-in")
+        
+        if(localStorage.length==0) {
+
+            // Khởi tạo value cho key cho kho câu hỏi_raw
+            localStorage.setItem("CauHoi1DA","{}");
+            localStorage.setItem("CauHoiNDA","{}");
+            localStorage.setItem("CauHoiDien","{}");
+            
+            // Khởi tạo value cho key cho kho câu hỏi\
+
+            // Khởi tạo value cho key kiểm tra tài khoản hiện tại
+            localStorage.setItem("current-account","{}");
+
+            //khởi tạo value cho key tài khoản
+            localStorage.setItem("account","{}");
+            
+            // Tạo admin
+            let admin_account_0={
+                account: "vinh",
+                password: "vinh123456",
+                email: "vinh@gmail.com",
+                per: "admin"
+            }
+            let admin_account_1={
+                account: "tai",
+                password: "tai123456",
+                email: "tai@gmail.com",
+                per: "admin"
+            }
+            let inner_account = JSON.parse(localStorage["account"]); // object
+            inner_account[`user_${Object.keys(inner_account).length}`]=JSON.stringify(admin_account_0);
+            inner_account[`user_${Object.keys(inner_account).length}`]=JSON.stringify(admin_account_1);
+            localStorage.setItem("account",JSON.stringify(inner_account));
+        }
+
+        // xu li dang ki 
+        btn_sign_up.onclick = function(){
+            var account_sign_up = document.querySelector("#account-sign-up").value;
+            var email_sign_up = document.querySelector("#email-sign-up").value;
+            var pass_sign_up = document.querySelector("#pass-sign-up").value;
+
+
+            if(account_sign_up == ""){
+                alert("Không để trống tài khoản");
+                return;
+            } else if (!email_sign_up.endsWith("@gmail.com")) {
+                alert("Email không đúng định dạng")
+                return;
+            } else if(pass_sign_up.length < 8){
+                alert("Mật khẩu tổi thiểu 8 kí tự");
+                return;
+            }
+
+            // tạo user
+            let user = {
+                account: account_sign_up,
+                email: email_sign_up,
+                password: pass_sign_up,
+                per: "member"
+            }
+
+            let check = 1;
+            let accountInfo = JSON.parse(localStorage["account"]) // object 
+            // kiem tra tai khoan ton tai
+            for(let i = 0; i < Object.keys(accountInfo).length; i++){
+                let userInfo = JSON.parse(accountInfo[`user_${i}`]);
+                if(userInfo.account === account_sign_up){
+                    alert("Tai khoan da ton tai");
+                    check = 0;
+                    return;
+                }
+            }
+
+
+            if(check == 1){
+                accountInfo[`user_${Object.keys(accountInfo).length}`] = JSON.stringify(user);
+                localStorage.setItem("account", JSON.stringify(accountInfo))
+                localStorage.setItem("current-account",JSON.stringify(user));
+                location.assign("../Index.html")                    
+            }
+        }
+
+        // xu li dang nhap
+        btn_sign_in.onclick = function() {
+            var account_sign_in = document.querySelector("#account-sign-in").value;
+            var pass_sign_in = document.querySelector("#pass-sign-in").value;
+
+
+            var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
+            if(account_sign_in == ""){
+                alert("Không để trống tài khoản")
+                return;
+            } else if (pass_sign_in.length < 8) {
+                alert("Mật khẩu tối thiểu 8 kí tự")
+                return;
+            }
+
+            let accountInfo = JSON.parse(localStorage["account"]);
+            let check = 1;
+            for(let i = 0; i < Object.keys(accountInfo).length; i++){
+                let userInfo = JSON.parse(accountInfo[`user_${i}`]);
+                if(userInfo.account === account_sign_in && userInfo.password === pass_sign_in){
+                    check = 0;
+                    localStorage.setItem("current-account",accountInfo[`user_${i}`]);
+                    location.assign("../Index.html")                    
+                }
+            }
+            if(check == 1){
+                alert("Tai khoan hoac mat khau khong chinh xac")
+            }
+        }
+
+
+
+
+
+
+        toggle_sign_up.onclick = function() {
+            // cho phần màu tím bên trái hiện lên trên phần màu trắng
+            toggle_left.style.zIndex = "100"
+            sign_in_sector.style.zIndex = "0"
+            toggle_right.style.animation = "move1 1.5s ease-in-out forwards";
+
+            // khi bấm vào nút đăng kí bên trái thì thanh tím ẩn đi, sau 1,1s mới hiện thanh đăng kí trắng để tránh bị đè
+            setTimeout(function(){
+                sign_up_sector.style.zIndex = "10";
+            }, 1100);
+            toggle_left.style.animation = "move2 1.2s ease-in-out forwards"
+            toggle_left.style.display = "flex"
+            toggle_left.style.zIndex = "100"
+
+            sign_up_sector.style.animation = "move4 1.3s ease-in-out forwards";
+            sign_in_sector.style.animation = "move3 2s ease-in-out forwards"
+        }
+
+        toggle_sign_in.onclick = function() {
+            toggle_right.style.zIndex = "100"
+            sign_up_sector.style.zIndex = "0"
+            toggle_left.style.animation = "move3 1.5s ease-in-out forwards"
+            setTimeout(function(){
+                sign_in_sector.style.zIndex = "10";
+            }, 1100);
+            toggle_right.style.animation = "move4 1.2s ease-in-out forwards";
+
+            sign_in_sector.style.animation = "move2 1.3s ease-in-out forwards";
+            sign_up_sector.style.animation = "move1 2s ease-in-out forwards"
+        }
+
+        
+   
+    </script>     
+</body>
+</html>

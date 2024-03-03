@@ -1,0 +1,66 @@
+#content-right {
+    position: relative;
+    top: 20px;
+    left: 190px;
+}
+#content-right .content-02 {
+    position: relative;
+    width: fit-content;
+    background-color: rgba(255, 255, 255,0.6);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: -50px;
+    margin-bottom: 100px;
+}
+#content-right #move1 {
+    animation: move-content 1s;
+}
+#content-right #move2 {
+    animation: move-content 1.2s;
+}
+@keyframes move-content {
+    from {left: 200px;}
+    to {left: 0px;}
+}
+.content-02 .image {
+    width: 1000px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.content-02 img {
+    width: 1000px;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+.content-02:hover img {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+.content-02 #line {
+    height: 1px;
+    width: 80%;
+    margin: 10px;
+    background-color: rgb(177, 177, 177);
+}
+.content-02 h2 {
+    margin: 10px 0px 20px 0px;
+}
+.content-02 p {
+    display: inline-block;
+    width: 900px;
+    margin-top: 5px;
+}
+.content-02 a {
+    color: #033a58;
+    margin-left: 20px;
+}
+.content-02 span {
+    font-style: italic;
+    font-size: 14px;
+    position: absolute;
+    left: 950px;
+    bottom: 20px;
+}
+.content-02 .ti-github {
+    color: #9a6be9;
+}

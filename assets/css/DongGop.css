@@ -1,0 +1,148 @@
+#content-right {
+    margin-left: 250px;
+    font-size: 26px;
+    width: 1000px;
+    height: 1000px;
+}
+textarea {
+    border-radius: 5px;
+}
+#content-right .form {
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(153, 153, 153);
+    position: relative;
+    animation: move-content ease 1s;
+}
+@keyframes move-content {
+    from {
+        opacity: 0.6;
+        left: 200px;
+    }
+    to {
+        overflow: 1;
+        left: 0px;
+    }
+}
+
+/* Loại câu hỏi */
+#content-right .loaicauhoi {
+    display: flex;
+}
+#content-right .name {
+    margin-left: 80px;
+}
+#content-right .check {
+    margin-left: 40px;
+}
+
+/* Câu hỏi */
+#content-right .cauhoi {
+    display: flex;
+}
+#content-right .cauhoi textarea {
+    font-size: 20px;
+    margin-left: 130px;
+}
+
+/* Đáp án */
+#content-right .dapan .name {
+    margin-left: 0px;
+    vertical-align: top;
+    display: inline-block;
+}
+#content-right .dapan .name p {
+    margin-bottom: 25px;
+}
+#content-right .dapan #dapan {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 62px;
+}
+#content-right .dapan textarea {
+    font-size: 20px;
+    margin-left: 1px;
+}
+
+#content-right hr {
+    margin: 20px;
+}
+
+#content-right .sai {
+    margin-top: 20px;
+    margin-left: 1px;
+}
+#content-right .dapan span {
+    cursor: pointer;
+    color: white;
+    margin-left: 230px;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    transition: 1.6s ease;
+}
+#content-right .dung span {
+    background-image: linear-gradient(90deg, #2d7d9a, #66c5cf);
+}
+
+#content-right .sai span {
+    background-image: linear-gradient(90deg, #982121, #c77575);
+}
+#content-right .dapan #dapan {
+    width: 620px;
+}
+#content-right .dapan i {
+    position: relative;
+    right: -5px;
+    top: -19px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(158, 158, 158);
+    transition: 0.6s ease;
+}
+#content-right .dapan i:hover {
+    background-color: rgb(196, 0, 0);
+    transition: 0.6s ease;
+}
+#content-right #submit {
+    cursor: pointer;
+    margin: 20px 0px 20px 400px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 40px;
+    border: 0px;
+    background-image: linear-gradient(90deg, #6479a2, #8493ba);
+    transition: 1.6s ease;
+}
+#content-right #submit:hover {
+    transform: scale(1.1);
+    transition: 0.6s ease;
+    box-shadow: 0px 0px 10px rgb(159, 159, 159);
+}
+textarea:focus,input:focus {
+    outline-color: #66c5cf;
+    border-radius: 5px;
+}
+
+#content-right .form button {
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(108, 189, 233);
+    margin-left: 50%;
+    transform: translate(-50%);
+    transition: 0.6s ease;
+}
+#content-right .form button:hover {
+    background-color: rgb(59, 139, 182);
+    transition: 0.6s ease;
+    box-shadow: 0px 0px 10px rgb(153, 153, 153);
+}

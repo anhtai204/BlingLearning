@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../assets/css/notify.css">
+    <title>BlingLearning</title>
+</head>
+<body>
+    <div id="main">
+        <div id="head">
+            <div id="head-left">
+                <a href="../Index.html"><img src="../assets/img/logo1.jpg" alt=""></a>
+                <div class="head-content-left">
+                    <i class="ti-angle-left"></i>
+                    <a href="../Index.html">Home</a>
+                </div>
+            </div>
+
+            <div id="head-center">
+                <input type="text" id="search" class="Search_input" placeholder="Tìm kiếm khóa học, bài viết, video, ...">
+                <div style="display: inline;" id="search-icon">
+                    <i class="ti-search"></i>
+                </div>
+            </div>
+
+            <div id="head-right">
+                <div style="display: inline; cursor: pointer;">Nguyễn Anh Tài</div>
+
+                <i class="ti-bell js-noti">
+                    <div class="sub-inform">
+                        <div id="sub-inform-top">
+                            <span>Thông báo</span>
+                            <span>Đánh dấu đã đọc</span>
+                        </div>
+                        <div id="sub-inform-bottom">
+                            <img src="../assets/img/cpp-course.jpg" alt="">
+                            <div style="display: flex; flex-direction: column;">
+                                <p style="margin-top: 10px;">Bài học <b>Class</b> mới được thêm vào</p>
+                                <p style="font-size: 12px; color: #fb5521 ;">2 ngày trước</p>
+                            </div>
+                        </div>
+                    </div>
+                </i>
+
+                <i class="ti-user js-set">
+                    <ul class="sub-account">
+                        <li id="my-page">
+                            <a href="../Index.html"><i class="ti-id-badge"></i><span>&nbsp;Trang cá nhân</span></a>
+                        </li>
+                        <li id="support">                              
+                            <a><i class="ti-comment-alt"></i><span>&nbsp;Đóng góp ý kiến</span></a>
+                        </li>
+                        <li id="setting">                               
+                            <a href="setting.html"><i class="ti-settings"></i><span>&nbsp;Cài đặt</span></a>
+                        </li>
+                        <li id="log-out">        
+                            <a onclick="logout()" href="DangNhap.html"><i class="ti-power-off"></i><span>&nbsp;Đăng xuất</span></a>
+                        </li>
+                    </ul>
+                </i>
+            </div>
+        </div>
+        <hr>
+        <script>
+            function logout() {
+                localStorage.setItem("current-account","{}");
+            }
+        </script>
+
+        <!-- Đóng góp ý kiến -->
+        <div class="contribute-sector">
+            <div class="contribute-ideas">
+                    <div id="ideas-head">
+                        <p>Đóng góp ý kiến</p>
+                        <i class="ti-close"></i>
+                    </div>
+                    <hr>
+        
+                    <div class="ideas-bottom">
+                        <li id="ideas-bt">
+                            <i class="ti-face-smile"></i>
+                            <div>
+                                <p style="font-family: sans-serif; font-weight: bold; font-size: 17px;">Chung tay cải thiện trang web</p>
+                                <p style="font-family: sans-serif; font-size: 14px; color: #8a8c8f;">Đóng góp ý kiến về trải nghiệm sử dụng của bạn</p>
+                            </div>
+                        </li>
+                        
+                        <li id="ideas-bt">
+                            <i class="ti-alert"></i>
+                            <div>
+                                <p style="font-family: sans-serif; font-weight: bold; font-size: 17px;">Đã xảy ra lỗi</p>
+                                <p style="font-family: sans-serif; font-size: 14px; color: #8a8c8f;">Hãy cho chúng tôi biết về tính năng bị lỗi</p>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+    
+    
+        <div id="body">
+                <div id="body-left">
+                    <h1 style="font-family: sans-serif; font-weight: 500;">Cài đặt</h1>
+                    <div class="body-content-left" id="set-account">
+                        <i class="ti-user"></i>
+                        <a style="color: #000; text-decoration: none;" href="setting.html">Cài đặt tài khoản</a>
+                    </div>
+                    <div class="body-content-left">
+                        <i class="ti-panel"></i>
+                        <a style="color: #000; text-decoration: none;" href="security.html">Bảo mật và đăng nhập</a>
+                    </div>
+                    <div class="body-content-left">
+                        <i class="ti-bell"></i>
+                        <a style="color: #000; text-decoration: none;" href="notify.html">Cài đặt thông báo</a>
+                    </div>
+                </div>
+    
+                <div id="body-right">
+                    <h2 style="margin-bottom: 6px; font-weight: 200;">Email</h2>
+                    <hr>
+                    <div id="content-right">
+                        <div class="email-content">
+                            <p style="margin-top: 18px;">Gửi email cho tôi khi có:</p>
+                            <div id="get-notify">
+                                <p>Bài học mới</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+
+                    <h2 style="margin-top: 50px; margin-bottom: 6px; font-weight: 200;">Thông báo</h2>
+                    <hr>
+                    <div id="content-right">
+                        <div class="email-content">
+                            <p style="margin-top: 18px;">Gửi thông báo cho tôi khi có:</p>
+                            <div id="get-notify">
+                                <p>Bài học mới</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+
+                            <div id="get-notify">
+                                <p>Nhắc đến trong bình luận</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+
+                            <div id="get-notify">
+                                <p>Trả lời bình luận</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+                            
+                            <div id="get-notify">
+                                <p>Cảm xúc trong bình luận</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+                            </div>
+                            
+                            <div id="get-notify">
+                                <p>Cảm xúc trong bài blog</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+
+                            <div id="get-notify">
+                                <p>Câu trả lời được chọn trong màn thảo luận</p>
+                                
+                                <div id="wrapper">
+                                    <input type="checkbox" class="switch">
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+
+    <script>
+        const a = document.querySelector('#head-right .ti-user');
+        const sub = document.querySelector('.sub-account')
+
+        function showSetting() {
+            if(sup.classList.contains('open')) {
+                sup.classList.remove('open');
+            }
+            sub.classList.toggle('open')
+        }
+        a.addEventListener('click', showSetting)
+
+
+        const b = document.querySelector('#head-right .ti-bell');
+        const sup = document.querySelector('.sub-inform')
+        function showInform() {
+            if(sub.classList.contains('open')) {
+                sub.classList.remove('open');
+            }
+            sup.classList.toggle('open')
+        }
+        b.addEventListener('click', showInform)
+
+        // đóng góp ý kiến
+        const show_ideas = document.querySelector("#support");
+
+        show_ideas.addEventListener('click', function(){
+            document.querySelector(".contribute-sector").classList.add('open');
+            document.querySelector(".contribute-ideas").classList.add('open');
+        })
+
+        document.querySelector("#ideas-head .ti-close").addEventListener('click',function(){
+            document.querySelector(".contribute-sector").classList.remove('open');
+            document.querySelector(".contribute-ideas").classList.remove('open');
+        }) 
+
+        document.querySelector(".contribute-sector").addEventListener('click', function(e){
+            document.querySelector(".contribute-sector").classList.remove('open');
+            document.querySelector(".contribute-ideas").classList.remove('open');
+        })
+
+        document.querySelector(".contribute-ideas").addEventListener('click', function(e){
+            e.stopPropagation();
+        })
+    </script>
+</body>
+</html>

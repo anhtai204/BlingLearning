@@ -1,0 +1,85 @@
+#content-right {
+    height: 700px;
+}
+#content-right .BCH {
+    text-align: center;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    margin: 70px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(141, 141, 141);
+    transition: 1s ease;
+}
+.BCH #image {
+    height: 400px;
+    width: 300px;
+}
+.BCH #image img {
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+.BCH h1 {
+    color: #6479a2;
+}
+.BCH #menu {
+    position: absolute;
+    top: 150px;
+    left: 85px;
+    display: none;
+}
+.BCH #menu a {
+    color: white;
+    display: block;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 40px;
+    transition: 1s;
+    background-image: linear-gradient(90deg, #6479a2, #8493ba);
+}
+.BCH:hover #menu #menu1 {
+    animation: move1 1s;
+}
+@keyframes move1 {
+    from {left: 80px;}
+    to {left: 0px;}
+}
+.BCH:hover #menu #menu2 {
+    animation: move2 1s;
+}
+@keyframes move2 {
+    from {right: 80px;}
+    to {right: 0px;}
+}
+
+.BCH:hover img {
+    filter: blur(5px);
+    transition: 2s ease;
+}
+.BCH:hover #menu {
+    display: block;
+}
+.BCH:hover {
+    transform: scale(1.1);
+    transition: 1s ease;
+}
+
+#content-right #id1 {
+    animation: inner 1s ease;
+}
+#content-right #id2 {
+    animation: inner 1.3s ease;
+}
+#content-right #id3 {
+    animation: inner 1.6s ease;
+}
+@keyframes inner {
+    from {top: 200px;}
+    to {top: 0px;}
+}

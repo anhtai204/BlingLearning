@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlingLearning</title>
+    <link rel="stylesheet" href="../assets/css/Index.css">
+    <link rel="stylesheet" href="../assets/css/home-footer.css">
+    <link rel="stylesheet" href="../assets/css/TinTuc.css">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
+    <style>
+        .open {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div class="nav">
+                <div class="logo">
+                    <img src="../assets/img/logo2.jpg" alt="Khoa CNTT ĐHSP Hà Nội">
+                    <div class="logo-content">
+                        <h2>KHOA CÔNG NGHỆ THÔNG TIN</h2>
+                        <h3>TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI</h3>
+                    </div>
+                </div>
+                
+                <div class="content-nav">
+                    <li id="course">
+                        <div>
+                            <i class="ti-book"></i>    
+                            <a>Khóa học</a>
+                        </div>
+                        <ul class="sub-course">
+                            <li style="line-height: 34px; margin-left: 20px; margin-top: 5px; font-weight: bold; font-family: sans-serif;">
+                                <p>Khóa học của tôi</p>
+                            </li>
+                            <a href="#">
+                                <li id="sub-course-sector">
+                                    <img src="../assets/img/html-course.jpg" alt="">
+                                        <span id="name-course">HTML CSS từ Zero đến Hero</span>
+                                        <span style="text-decoration: underline;" id="start-learn">Bắt đầu học</span>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li id="sub-course-sector">
+                                    <img src="../assets/img/js-course.jpg" alt="">
+                                    <span id="name-course">Lập Trình JavaScript Cơ Bản</span>
+                                    <span style="text-decoration: underline;" id="start-learn">Bắt đầu học</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </li>
+
+                    <li id="train">
+                        <i class="ti-pencil-alt"></i>
+                        <a href="LuyenTap.html">Luyện tập</a>
+                    </li>
+
+                    <li id="note">
+                        <i class="ti-pencil-alt"></i>
+                        <a href="DuyetCauHoi.html">Duyệt câu hỏi</a>
+                    </li>
+                    <li id="account">
+                        <div>
+                            <i class="ti-user"></i>
+                            <a>Account</a>
+                        </div>
+                        <ul class="sub-account">
+                            <li id="support">                              
+                                <a><i class="ti-comment-alt"></i><span>&nbsp;Đóng góp ý kiến</span></a>
+                            </li>
+                            <li id="setting">                               
+                                <a href="setting.html"><i class="ti-settings"></i><span>&nbsp;Cài đặt</span></a>
+                            </li>
+                            <li id="log-out">
+                                <a onclick="logout()" href="DangNhap.html"><i class="ti-power-off"></i><span>&nbsp;Đăng xuất</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <script>
+            function logout() {
+                localStorage.setItem("current-account","{}");
+            }
+        </script>
+        
+        <!-- Đóng góp ý kiến -->
+
+        <div class="contribute-ideas">
+            <div id="ideas-head">
+                <p>Đóng góp ý kiến</p>
+                <i class="ti-close"></i>
+            </div>
+            <hr>
+
+            <div class="ideas-bottom">
+                <li id="ideas-bt">
+                    <i class="ti-face-smile"></i>
+                    <div>
+                        <p style="font-family: sans-serif; font-weight: bold; font-size: 17px;">Chung tay cải thiện trang web</p>
+                        <p style="font-family: sans-serif; font-size: 14px; color: #8a8c8f;">Đóng góp ý kiến về trải nghiệm sử dụng của bạn</p>
+                    </div>
+                </li>
+                
+                <li id="ideas-bt">
+                    <i class="ti-alert"></i>
+                    <div>
+                        <p style="font-family: sans-serif; font-weight: bold; font-size: 17px;">Đã xảy ra lỗi</p>
+                        <p style="font-family: sans-serif; font-size: 14px; color: #8a8c8f;">Hãy cho chúng tôi biết về tính năng bị lỗi</p>
+                    </div>
+                </li>
+            </div>
+        </div>
+        
+        <!--  -->
+
+        <div class="content">
+            <li id="content-left">
+                <div class="top-content-icon">
+                    <a href="../Index.html"><div class="back-home">
+                        <i class="ti-home"></i>
+                        <p>Trang chủ</p>
+                    </div></a>
+    
+                    <a href="LoTrinh.html"><div class="road">
+                        <i class="ti-map"></i>
+                        <p>Lộ trình</p>
+                    </div></a>
+    
+                    <a href="BaiViet.html"><div class="notification">
+                        <i class="ti-comment-alt"></i>
+                        <p>Bài Viết</p>
+                    </div></a>
+    
+                    <a id="active" href="TinTuc.html"><div class="announce">
+                        <i class="ti-announcement"></i>
+                        <p>Tin tức</p>
+                    </div></a>
+                </div>
+
+                <div class="help">
+                    <i class="ti-help-alt"></i>
+                    <a href="#">Help</a>
+                </div>
+            </li>
+
+            <li id="content-right">
+                <div class="content-02" id="move1">
+                    <h1>News Feed!</h1>
+                    <div id="line"></div>
+                    <h2># Giao lưu cùng trai xinh, gái đẹp lớp Offline nào 🤭</h2>
+                    <div class="image">
+                        <img src="../assets/img/TinTuc/TinTuc01.jpg" alt="">
+                    </div>
+                    <p>Những chia sẻ vô cùng thú vị từ các bạn sinh viên khác!</p>
+                    <div id="line"></div>
+                    <p>Đăng bởi: <a href="">Admin</a></p><span>3 ngày trước</span>
+                </div>
+                <div class="content-02" id="move2">
+                    <h1>Github Universe 2023 <i class="ti-github"></i></h1>
+                    <div id="line"></div>
+                    <h2># Giao lưu cùng các lập trình viên trên khắp thế giới!</h2>
+                    <div class="image">
+                        <img src="../assets/img/TinTuc/TinTuc02.jpg" alt="">
+                    </div>
+                    <p><i class="ti-github"></i> Universe 2023 nói về AI, 🔐 Bảo Mật và 🧑‍💻 Trải Nghiệm của developer. Về cách khơi dậy sự đổi mới, duy trì dòng chảy, tối ưu hóa hoạt động cộng tác và ngăn chặn các lỗ hổng bảo mật được hỗ trợ bởi AI.</p>
+                    <div id="line"></div>
+                    <p>Đăng bởi: <a href="">Admin</a></p> <span>3 tháng trước</span>
+                </div>
+            </li>
+        </div>
+    </div>
+
+    <div class="home-footer">
+        <div class="image">
+            <img src="../assets/img/logo2.jpg" alt="">
+        </div>
+        <div class="info">
+            <span>BlingLearning</span><br>
+            <span>Nhóm 12 - NTPTW01 - K72 Nền Tảng Phát Triển Web</span><br>
+            <span>1 Tháng 12, 2023</span>
+        </div>
+        <div class="tag">
+            <span>Khoa Công nghệ thông tin - Trường Đại học Sư phạm Hà Nội 2023</span>
+        </div>
+    </div>
+    <script>
+
+        // Account sub
+        const sub_account = document.querySelector('.sub-account');
+        const user_avt = document.querySelector('#account > div');
+
+
+        function showAccount() {
+            if(sub_course.classList.contains('open')) {
+                sub_course.classList.remove('open')
+            }
+            sub_account.classList.toggle('open');
+        }
+
+        user_avt.addEventListener('click', showAccount)
+
+
+        // Course sub
+        const sub_course = document.querySelector('.sub-course');
+        const course_avt = document.querySelector('#course > div');
+
+
+        function showCourse() {
+            if(sub_account.classList.contains('open')) {
+                sub_account.classList.remove('open')
+            }
+            sub_course.classList.toggle('open');
+        }
+        
+        course_avt.addEventListener('click', showCourse)
+
+        // Contribute ideas
+        const show_ideas = document.querySelector('.sub-account #support');
+        const sub_ideas = document.querySelector('.contribute-ideas');
+        const ideas_avt = document.querySelector('#ideas-head .ti-close');
+
+        function showContribute() {
+            if(sub_account.classList.contains('open')) {
+                sub_account.classList.remove('open')
+            }
+            sub_ideas.classList.add('open');
+        }
+
+        function hideContribute() {
+            sub_ideas.classList.remove('open')
+        }
+
+        show_ideas.addEventListener('click', showContribute);
+        ideas_avt.addEventListener('click', hideContribute);
+
+    </script>
+</body>
+</html>
